@@ -1,0 +1,193 @@
+/* /////////////////////////////////////////////////////////////////// */
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: Minecraftia;
+  src: url(https://fontlibrary.org/assets/fonts/minecraftia/71962a7e3d4a70435c030466a12f1d63/bf3f245b7cd53caea0cb07d265a64adc/MinecraftiaRegular.ttf);
+}
+/* /////////////////////////////////////////////////////////////////// */
+html {
+  font: 2.5vh "Minecraftia", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  background-image: url("https://i.ibb.co/bH3JY30/IE1G7Lr.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Minecraft Style Menu */
+.mc-menu {
+  --btn-size: 8vh;
+  display: grid;
+  grid-template-columns: 8.5vh calc(var(--btn-size) * 6) 7.5vh;
+  grid-template-rows: var(--btn-size) var(--btn-size) 1px var(--btn-size);
+  grid-template-areas: ". 		first 		." ". 		second 		." ".		.					." "lang fourth 		.";
+  grid-gap: 1vh;
+}
+.mc-menu .mc-button:nth-child(1) {
+  grid-area: first;
+}
+.mc-menu .mc-button:nth-child(2) {
+  grid-area: second;
+}
+.mc-menu .mc-button:nth-child(3) {
+  grid-area: third;
+}
+.mc-menu .double {
+  grid-area: fourth;
+}
+.mc-menu .double .mc-button:nth-child(1) {
+  grid-area: left;
+}
+.mc-menu .double .mc-button:nth-child(2) {
+  grid-area: right;
+}
+.mc-menu .mc-button:nth-child(5) {
+  grid-area: lang;
+}
+.mc-menu .double {
+  font: 2vh "Minecraftia", sans-serif;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "left right";
+  grid-gap: 1.25vh;
+}
+/* ms-store-badge{
+  height: var(--btn-size);
+  width: calc(var(--btn-size) * 10);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  background: #999 url("https://i.ibb.co/rb2TWXL/bgbtn.png") center/cover;
+  image-rendering: pixelated;
+  border: 2px solid #000;
+} */
+/* Minecraft Style Button */
+.mc-button{
+  height: var(--btn-size);
+  width: calc(var(--btn-size) * 10);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  background: #999 url("https://i.ibb.co/rb2TWXL/bgbtn.png") center/cover;
+  image-rendering: pixelated;
+  border: 2px solid #000;
+  /* Mouse over */
+  /* Button title */
+  /* Others */
+}
+.mc-button:hover .title{
+  background-color: rgba(100, 100, 255, 0.45);
+  text-shadow: 4px 4px #202013EE;
+  color: #FFFF96;
+}
+.mc-button:active .title{
+  box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+.mc-button .title{
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #EEE;
+  text-shadow: 3px 3px #000a;
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+.mc-button.full {
+  width: 100%;
+  height: 100%;
+}
+.mc-button.lang img{
+  width: 26px;
+  height: 26px;
+}
+.mc-button.lang .title{
+  padding-bottom: 0;
+}
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  /* min-width: 250px; /* Set a default minimum width */
+  /* margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+#wackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#wackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

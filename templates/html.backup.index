@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/minecraftia" type="text/css"/>
+  {% assets "scss_all" %}
+  <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+  {% endassets %}
+  <meta charset="UTF-8">
+  <title>Tectonix.tk</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://tectonix.tk" />
+  <meta property="og:image" content="https://i.imgur.com/RII4XsG.png" />
+  <meta property="og:image:width" content= "1200" />
+  <meta property="og:image:height" content="1800" />
+	<meta property="og:description" content="Groundbreaking."/>
+  <meta property="og:title" content="Tectonix" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <script>
+    function copyInvite() {
+      navigator.clipboard.writeText("tsdbbjchZjY").then(function() {
+      var x = document.getElementById("snackbar");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}, function() {
+      var y = document.getElementById("invitebutton");
+      y.text = "Code: tsdbbjchZjY"
+      var x = document.getElementById("wackbar");
+      x.className = "show";
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+});
+}
+  </script>
+<!-- partial:index.partial.html -->
+<!--//- Menu-->
+<div class="mc-menu">
+  <div class="mc-button full">
+    <div class="title" onclick="window.location.href='/realm'">Join Tectonix</div>
+  </div>
+  <div class="mc-button full">
+    <div class="title" onclick="copyInvite()" id="invitebutton">Copy Invite Code</div>
+  </div>
+  
+  <div class="double">
+    <div class="mc-button full">
+      <div class="title" onclick="window.location.href='/discord'">Discord</div>
+    </div>
+    <div class="mc-button full">
+      <div class="title" onclick="window.location.href='/mc'">Get Minecraft</div>
+    </div>
+  </div>
+</div>
+<div id="snackbar">Copied to clipboard!</div>
+<div id="wackbar">Unable to copy to clipboard!</div>
+
+</body>
+</html>
